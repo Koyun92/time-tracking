@@ -4,6 +4,12 @@ const previousTime = document.querySelectorAll('.stat p:nth-of-type(2)')
 const btns = document.querySelectorAll('.user__btn')
 let periodOption = 1;
 
+function optionSwitch() {
+
+    periodOption = Number(this.dataset.id)
+    getData()
+}
+
 function getData() {
     fetch('data.json')
         .then(res => res.json())
@@ -11,11 +17,8 @@ function getData() {
         .catch(err => console.error(err))
 
     function appendData(data) {
-
         for (let i = 0; i < data.length; i++) {
-
             title[i].innerHTML = data[i].title
-
             if (periodOption == 1) {
                 currentTime[i].innerHTML = data[i].timeframes.daily.current;
                 previousTime[i].innerHTML = data[i].timeframes.daily.previous;
@@ -29,22 +32,8 @@ function getData() {
         }
     }
 
-
 }
 getData();
-
-function optionSwitch() {
-    console.log(this)
-    periodOption = Number(this.dataset.id)
-
-
-    getData()
-
-}
-
-
-
-
 
 btns.forEach(item => {
     item.addEventListener('click', optionSwitch)
