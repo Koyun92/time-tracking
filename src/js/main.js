@@ -4,20 +4,16 @@ const previousTime = document.querySelectorAll('.stat p:nth-of-type(2)')
 const btns = document.querySelectorAll('.user__btn')
 let periodOption = 1;
 
-function optionSwitch() {
-    console.log(this)
-    periodOption = Number(this.dataset.id)
+function getData() {
     fetch('data.json')
         .then(res => res.json())
         .then(data => appendData(data))
         .catch(err => console.error(err))
 
-
-
     function appendData(data) {
-        console.log(data)
+
         for (let i = 0; i < data.length; i++) {
-            console.log(data[i].title)
+
             title[i].innerHTML = data[i].title
 
             if (periodOption == 1) {
@@ -32,7 +28,21 @@ function optionSwitch() {
             }
         }
     }
+
+
 }
+getData();
+
+function optionSwitch() {
+    console.log(this)
+    periodOption = Number(this.dataset.id)
+
+
+    getData()
+
+}
+
+
 
 
 
