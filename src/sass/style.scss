@@ -1,4 +1,88 @@
+@import '_variables';
+@import '_mixins';
+@import '_components';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+.active {
+    color: $white !important;
+}
+
+
+
 body {
     font-family: 'Rubik', sans-serif;
-    ;
+    background-color: $Dark-blue;
+    font-size: 1.5rem;
+}
+
+.dashboard {
+    padding: 2rem;
+    margin: 4rem auto;
+
+
+}
+
+.user {
+
+    color: $white;
+
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+
+
+
+    &__heading {
+        @include flex(row, start, start, nowrap);
+        background-color: $blue;
+        @include boxAdjustment;
+
+        span {
+            color: $Pale-Blue;
+        }
+
+        h1 {
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+    }
+
+    &__avatar {
+        border-radius: 100%;
+        border: 2px $white solid;
+        width: 5rem;
+        margin-right: 1rem
+    }
+
+    &__period {
+        @include flex(row, center, space-between, nowrap);
+        @include boxAdjustment;
+    }
+
+    &__btn {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        color: $Desaturated-blue;
+
+        &:hover {
+            color: white
+        }
+
+
+    }
+
+
 }

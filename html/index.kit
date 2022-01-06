@@ -15,16 +15,23 @@
     <section class="dashboard">
         <div class="user">
 
-            <div class="user__name">
-                <span>Report for</span>
-                <h1>Jeremy Robson</h1>
+            <div class="user__heading">
+                <img class="user__avatar" src="dist/img/image-jeremy.png" alt="user-avatar">
+                <div class="user__name">
+                    <span>Report for</span>
+                    <h1>Jeremy Robson</h1>
+                </div>
             </div>
-            <div class="user__period">
-                <button class="user__btn" data-id=1>Daily</button>
-                <button class="user__btn" data-id=2>Weekly</button>
-                <button class="user__btn" data-id=3>Monthly</button>
-            </div>
+
+
         </div>
+        <div class="user__period">
+            <button class="user__btn active" data-id=1>Daily</button>
+            <button class="user__btn" data-id=2>Weekly</button>
+            <button class="user__btn" data-id=3>Monthly</button>
+        </div>
+        </div>
+
         <div class="stat stat--work">
             <div class="stat__box">
                 <h2 class="stat__title"></h2>
@@ -58,7 +65,7 @@
             </div>
         </div>
         <div class="stat stat--social">
-            <div class="stat__box">
+            <div class="stat__box boxPadding">
                 <h2 class="stat__title"></h2>
                 <img class="stat__icon" src="" alt="">
                 <p class="stat__hours"></p>
@@ -66,7 +73,7 @@
             </div>
         </div>
         <div class="stat stat--selfcare">
-            <div class="stat__box">
+            <div class="stat__box boxPadding">
                 <h2 class="stat__title"></h2>
                 <img class="stat__icon" src="" alt="">
                 <p class="stat__hours"></p>

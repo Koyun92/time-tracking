@@ -4,10 +4,12 @@ const previousTime = document.querySelectorAll('.stat p:nth-of-type(2)')
 const btns = document.querySelectorAll('.user__btn')
 let periodOption = 1;
 
-function optionSwitch() {
+function classClearing() {
+    for (let i = 0; i < btns.length; i++) {
+        btns[i].classList.remove('active')
 
-    periodOption = Number(this.dataset.id)
-    getData()
+    }
+
 }
 
 function getData() {
@@ -19,6 +21,7 @@ function getData() {
     function appendData(data) {
         for (let i = 0; i < data.length; i++) {
             title[i].innerHTML = data[i].title
+
             if (periodOption == 1) {
                 currentTime[i].innerHTML = data[i].timeframes.daily.current;
                 previousTime[i].innerHTML = data[i].timeframes.daily.previous;
@@ -33,6 +36,20 @@ function getData() {
     }
 
 }
+
+function optionSwitch() {
+
+    periodOption = Number(this.dataset.id)
+    classClearing();
+    this.classList.add('active')
+    console.log(this)
+
+    getData();
+
+
+}
+
+
 getData();
 
 btns.forEach(item => {

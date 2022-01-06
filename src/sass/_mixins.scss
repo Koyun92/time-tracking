@@ -1,0 +1,20 @@
+@mixin flex($direction, $align, $justify, $wrap) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+    flex-wrap: $wrap;
+
+}
+
+@mixin grid($column, $row) {
+    display: grid;
+    grid-template-columns: $column;
+    grid-template-rows: $row;
+}
+
+@mixin boxAdjustment {
+    padding: 2rem;
+    max-width: 400px;
+    margin: auto;
+}
