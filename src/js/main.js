@@ -1,6 +1,6 @@
 const title = document.querySelectorAll('.stat h2')
-const currentTime = document.querySelectorAll('.stat p:nth-of-type(1)')
-const previousTime = document.querySelectorAll('.stat p:nth-of-type(2)')
+const currentTime = document.querySelectorAll('.stat p:nth-of-type(1) span')
+const previousTime = document.querySelectorAll('.stat p:nth-of-type(2) span')
 const btns = document.querySelectorAll('.user__btn')
 let periodOption = 1;
 

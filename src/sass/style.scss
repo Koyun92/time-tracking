@@ -24,29 +24,32 @@ html {
 
 body {
     font-family: 'Rubik', sans-serif;
-    background-color: $Dark-blue;
+    background-color: $Very-dark-blue;
     font-size: 1.5rem;
 }
 
 .dashboard {
     padding: 2rem;
     margin: 4rem auto;
-
-
+    @include grid(repeat(1, 1fr), auto);
+    grid-gap: 3rem;
+    max-width: 450px;
 }
+
 
 .user {
 
     color: $white;
+    background-color: $Dark-blue;
+    @include radius;
 
-    border-bottom-right-radius: 1rem;
-    border-bottom-left-radius: 1rem;
 
 
 
     &__heading {
         @include flex(row, start, start, nowrap);
         background-color: $blue;
+        @include radius;
         @include boxAdjustment;
 
         span {
@@ -69,6 +72,8 @@ body {
     &__period {
         @include flex(row, center, space-between, nowrap);
         @include boxAdjustment;
+        @include radiusTop;
+
     }
 
     &__btn {
@@ -85,4 +90,104 @@ body {
     }
 
 
+}
+
+.stat {
+    @include boxAdjustment;
+    padding: 0;
+    @include radius;
+    overflow: hidden;
+    position: relative;
+
+    &__title {
+        font-size: 1.6rem;
+    }
+
+    &__hours,
+    &__title {
+        color: $white;
+        font-weight: 400;
+        align-self: center;
+    }
+
+    &__hours {
+        font-size: 3rem;
+
+        &--last {
+            justify-self: end;
+            font-weight: 300;
+            font-size: 1.3rem;
+            color: $Desaturated-blue;
+        }
+    }
+
+    &__icon {
+        align-self: center;
+        justify-self: end;
+
+    }
+
+
+
+
+    &__box {
+        background-color: $Dark-blue;
+        @include boxAdjustment;
+        @include radiusTop;
+        @include grid(repeat(2, 1fr), repeat(2, 1fr));
+        grid-gap: 1rem;
+        border-top-right-radius: 2rem;
+        border-top-left-radius: 2rem;
+        margin-top: 4rem;
+        z-index: 1;
+        position: relative;
+
+    }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        right: 3rem;
+        z-index: 0;
+
+    }
+
+    &--work {
+        background-color: $work;
+    }
+
+    &--play {
+        background-color: $play;
+    }
+
+    &--study {
+        background-color: $study;
+    }
+
+    &--exercise {
+        background-color: $exercise;
+    }
+
+    &--social {
+        background-color: $social;
+    }
+
+    &--selfcare {
+        background-color: $care;
+    }
+
+
+}
+
+@media (min-width:1200px) {
+    body {
+        height: 100vh;
+        @include flex(row, center, center, nowrap)
+    }
+
+    .dashboard {
+        @include grid(repeat(4, 1fr), repeat(2, 1fr));
+        width: 95vw;
+        max-width: 1300px;
+    }
 }

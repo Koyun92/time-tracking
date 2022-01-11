@@ -11,10 +11,21 @@
     display: grid;
     grid-template-columns: $column;
     grid-template-rows: $row;
+
 }
 
 @mixin boxAdjustment {
     padding: 2rem;
-    max-width: 400px;
-    margin: auto;
+
+
+}
+
+@mixin radius {
+    border-radius: 1.5rem;
+}
+
+@mixin radiusTop {
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+
 }
