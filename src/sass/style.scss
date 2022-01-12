@@ -49,6 +49,7 @@ body {
     &__heading {
         @include flex(row, start, start, nowrap);
         background-color: $blue;
+
         @include radius;
         @include boxAdjustment;
 
@@ -83,7 +84,7 @@ body {
         color: $Desaturated-blue;
 
         &:hover {
-            color: white
+            color: rgb(238, 230, 230)
         }
 
 
@@ -94,10 +95,12 @@ body {
 
 .stat {
     @include boxAdjustment;
+    @include flex(column, stretch, flex-end, nowrap);
     padding: 0;
     @include radius;
     overflow: hidden;
     position: relative;
+
 
     &__title {
         font-size: 1.6rem;
@@ -124,6 +127,10 @@ body {
     &__icon {
         align-self: center;
         justify-self: end;
+        cursor: pointer;
+
+
+
 
     }
 
@@ -135,20 +142,28 @@ body {
         @include boxAdjustment;
         @include radiusTop;
         @include grid(repeat(2, 1fr), repeat(2, 1fr));
+        height: 70%;
         grid-gap: 1rem;
         border-top-right-radius: 2rem;
         border-top-left-radius: 2rem;
-        margin-top: 4rem;
+        padding-bottom: 4rem;
         z-index: 1;
         position: relative;
+        cursor: pointer;
+
+        &:hover {
+            filter: brightness(150%);
+        }
 
     }
 
     &__img {
         position: absolute;
-        top: 0;
+        top: -1rem;
         right: 3rem;
         z-index: 0;
+
+
 
     }
 
@@ -188,6 +203,48 @@ body {
     .dashboard {
         @include grid(repeat(4, 1fr), repeat(2, 1fr));
         width: 95vw;
+        height: 60vh;
+        max-height: 500px;
         max-width: 1300px;
+    }
+
+    .user {
+        grid-row: 1/3;
+        @include flex(column, stretch, space-around, wrap);
+
+        &__heading {
+            @include flex(column, start, space-around, nowrap);
+            height: 60%;
+
+            h1 {
+                font-size: 3.5rem;
+            }
+        }
+
+        &__avatar {
+
+            width: 7rem;
+
+        }
+
+        &__period {
+            @include flex(column, start, space-between, nowrap);
+            flex-grow: 1;
+            padding: 3rem 2rem;
+        }
+    }
+
+    .stat {
+        &__box {
+            height: 85%;
+            @include grid(repeat(2, 1fr), repeat(3, 1fr));
+            padding-bottom: 2rem;
+        }
+
+        &__hours--last {
+            grid-row: 3/4;
+            justify-self: start;
+        }
+
     }
 }
